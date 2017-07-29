@@ -1,23 +1,6 @@
-  {% load staticfiles %}
-<html>
+{% extends 'blog/base.html' %}
 
-    <head>
-      <title>Steph's blog</title>
-      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="">Medlar Corporation</a></h1>
-        </div>
-
-        <div>
-          <div class="content container">
-    <div class="row">
-        <div class="col-md-8">
+{% block content %}
             {% for post in posts %}
                 <div class="post">
                     <div class="date">
@@ -27,23 +10,4 @@
                     <p>{{ post.text|linebreaksbr }}</p>
                 </div>
             {% endfor %}
-        </div>
-    </div>
-</div>
-
-
-
-
-            <!--<p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Air Freight or Cargo Shipping</a></h2>
-            <p>Choose which mode of shipping depending on your business expenses and budget.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Internet at sea for shipment tracking</a></h2>
-            <p>Internet is now accessible at sea, not only for leisure but also for business purposes mainly high volume and density shipment tracking</p>
--->
-        </div>
-    </body>
-</html>
+{% endblock %}
